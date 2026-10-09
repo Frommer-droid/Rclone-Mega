@@ -1,0 +1,48 @@
+[project]
+name = "rclone-mega"
+version = "0.8.0"
+description = "Desktop-приложение для безопасной зеркальной синхронизации локальных папок в MEGA через rclone."
+readme = "README.md"
+license = { text = "MIT" }
+requires-python = ">=3.12"
+authors = [
+  { name = "Frommer-droid" },
+]
+dependencies = [
+  "PySide6",
+]
+
+[project.optional-dependencies]
+dev = [
+  "PyInstaller>=6.14,<7",
+  "pytest",
+  "ruff",
+]
+
+[tool.ruff]
+line-length = 88
+target-version = "py312"
+exclude = [
+  ".git",
+  ".venv",
+  "__pycache__",
+  ".pytest_cache",
+  ".ruff_cache",
+  "build",
+  "dist",
+  "Build_Tools/build",
+  "Build_Tools/dist",
+]
+
+[tool.ruff.lint]
+select = ["E4", "E7", "E9", "F"]
+
+[tool.pytest.ini_options]
+minversion = "7.0"
+addopts = "-ra -q"
+testpaths = ["tests"]
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["app*"]
+namespaces = false
