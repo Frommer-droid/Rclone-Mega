@@ -1,0 +1,14 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Запуск приложения из .venv",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "${workspaceFolder}\\rclone_mega.py",
+      "python": "${workspaceFolder}\\.venv\\Scripts\\python.exe",
+      "console": "integratedTerminal",
+      "justMyCode": true
+    }
+  ]
+}
